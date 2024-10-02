@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #000;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Unutk css animation scroll hero section */
+
+.hero-masuk {
+  transform: translate(0);
+}
+
+.project-in {
+  transform: translateX(0);
+}
+
+@keyframes appears {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: appears linear;
+  transform: translateY(0);
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes slider {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%) scale(1);
+  }
+}
+
+.slider {
+  animation: slider 2s infinite ease-in;
+  animation-play-state: inherit;
+  animation-delay: calc(2s * var(--delay));
+}
+
+.gambar-1 {
+  --delay: 0;
+}
